@@ -1,0 +1,25 @@
+<div class="calculator-container">
+    <div class="display">
+        <app-display [displayText]="displayContent"> </app-display>
+    </div>
+
+    <div class="btn-container">
+        <div class="func-btn-container">
+            <app-function-button id="func-btn-{{funcBtn.name}}" class="func-btn" *ngFor="let funcBtn of funcBtns"
+                [name]="funcBtn.name" [type]="funcBtn.type" (buttonClick)="handleFunctionButtonClick(funcBtn.name)">
+            </app-function-button>
+        </div>
+        
+        <div class="num-btn-container">
+            <app-numeric-button id="num-btn-{{numBtn.name}}" class="num-btn" *ngFor="let numBtn of numBtns"
+                [name]="numBtn.name" [type]="numBtn.type" (buttonClick)="handleNumericButtonClick(numBtn.name)">
+            </app-numeric-button>
+        </div>
+        
+        <div class="opr-btn-container">
+            <app-operation-button id="opr-btn-{{oprBtn.name}}" class="opr-btn" *ngFor="let oprBtn of oprBtns"
+                [name]="oprBtn.name" [type]="oprBtn.type" (buttonClick)="handleOperationButtonClick(oprBtn.name)">
+            </app-operation-button>
+        </div>
+    </div>
+</div>
